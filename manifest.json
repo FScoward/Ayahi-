@@ -25,7 +25,8 @@
     "content_scripts": [
         {
             "matches": ["http://*/*"],  // 拡張機能を適用するURLパターン
-            "js": ["js/jquery-1.10.2.min.js", "js/jquery.xdomainajax.js", "js/popup.js"]                                      // JavaScriptのパス
+            "js": ["js/jquery-1.10.2.min.js", "js/jquery.xdomainajax.js", "js/popup.js"], // JavaScriptのパス
+            "css": ["css/ayahi.css"]
         }
     ],
     "browser_action": {
