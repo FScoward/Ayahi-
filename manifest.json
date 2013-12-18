@@ -1,0 +1,36 @@
+{
+    // 拡張機能の定義
+    "manifest_version": 2,  // マニフェストのバージョン ※"2"を指定
+    "name": "Ayahi",       // 拡張機能の名称
+    "version": "1.0",       // 拡張機能のバージョン
+ 
+    "description": "あやひーを楽しむ",  // 拡張機能の概要
+ 
+    // アイコンの設定
+    "icons": {
+        "16": "icons/icon.png",         // 16×16[px]アイコンファイルのパス
+        "48": "icons/icon.png",         // 48×48[px]アイコンファイルのパス
+        "128": "icons/icon.png"         // 128×128[px]アイコンファイルのパス
+    },
+
+	"web_accessible_resources": [ // セキュリティの為、Ajax等で外部リソースにアクセス出来るファイルを指定しなければいけない
+	    "popup.html"
+	  ],
+
+    "permissions" : [
+    	"http://animage.tumblr.com/tagged/"
+    ],
+
+    // スクリプトの設定
+    "content_scripts": [
+        {
+            "matches": ["http://*/*"],  // 拡張機能を適用するURLパターン
+            "js": ["js/jquery-1.10.2.min.js", "js/jquery.xdomainajax.js", "js/popup.js"]                                      // JavaScriptのパス
+        }
+    ],
+    "browser_action": {
+    	"default_icon": "icons/icon.png",
+    	"default_title": "Ayahi",
+    	"default_popup": "html/popup.html"
+    }
+}
